@@ -7,12 +7,12 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Lazy loading products</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
 
     </head>
     <body>
-        <div class="container" id="app">
-            <div id="product_area">
-            </div>
+        <div class="container-fluid" id="app">
+            <product-area :pagination-initial='{!! json_encode($products) !!}'></product-area>
         </div>
         <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
     </body>
